@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
+	  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css' />
+    <script src='map.js'></script>
+    <link href='map.css' rel='stylesheet' />
+    <script src='nav.js'></script>
+    <link href='nav.css' rel='stylesheet' />
+	
+    <style>
+        body { margin:0; padding:0; font-family: "Lato", sans-serif; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body onload='initmap()'>
+
+<div id='map'></div>
+
+<div id="mySidenav" class="sidenav">
+  <span class="navbtn closebtn" onclick="closeNav()">&times;</span>
+  <h2>Mondaine</h2>
+  <a href="#">ESDLcreator</a>
+  <a href="#">Energysystem</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+
+<div id='leftpanel'>
+<h2>
+<span class="navbtn openbtn" style="" onclick="openNav()">&#9776;</span>
+ESDLcreator
+</h2>
+
+
+<div class='box'>
+Systeem: 
+<input type=text placeholder='naam' class='inp' >
+<input type=button value=nieuw>
+<input type=button value=zoek>
+</div>
+
+<div class='box'>
+<input type=button class='inp' value='wijzig energiesysteem' onclick='showBlock("edit")'>
+<input type=button class='inp' value='bereken de energiebalans' onclick='showBlock("balance")'>
+</div>
+
+
+<span id='systembalance' style='display:none'>
+	<div class='box'>
+	<center><b>Bereken energiebalans</b></center>
+	</div> 
+</span>
+
+<span id='systemedit' style='display:none'>
+	<div class='box'>
+	<center><b>Wijzig gegevens</b></center>
+	</div> 
+	
+	<div class='box'>
+	Assets:
+	<select id="assets" size="5" class='inp' onchange='getAsset( this )' >
+	<option>productie 1</option>
+	<option>productie 2</option>
+	<option>transport 1</option>
+	<option>consumptie 1</option>
+	<option>consumptie 2</option>
+	<option>consumptie 3</option>
+	</select>
+	<input type=button value=nieuw>
+	</div>
+
+	<div class='box'>
+	Gegevens <br>
+	<span class='inplbl'>naam</span>
+	<input id='assetname' type=text placeholder='naam' class='inpdata'> <br>
+	<span class='inplbl'>energie (joules)</span>
+	<input type=text placeholder='joules' class='inpdata'><br>
+	<span class='inplbl'>kosten (euro per jaar)</span>
+	<input type=text placeholder='euro' class='inpdata'><br>
+	<span class='inplbl'>vervuiling (CO2 per jaar)</span>
+	<input type=text placeholder='CO2' class='inpdata'><br>
+	<input type=button value=opslaan> 
+	<input type=button value=verwijder>
+	<input type=button value=locatie>
+	</div>
+
+</span>
+
+</div>
+
+<div id="menu">
+	<input id="positron" type="radio" name="rtoggle" value="basic" checked="checked" />
+	<label for="basic">basic</label>
+	<input id="streets" type="radio" name="rtoggle" value="streets" />
+	<label for="streets">streets</label>
+	<input id="hybrid" type="radio" name="rtoggle" value="satellite" />
+	<label for="satellite">satellite</label>
+</div>
+
+
+</body>
+</html>

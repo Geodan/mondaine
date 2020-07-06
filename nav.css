@@ -1,0 +1,91 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 10px;
+  border-right: 0px solid;
+  box-shadow: 2px 5px 8px #888888;
+}
+
+.sidenav h2{
+  padding: 8px 8px 0px 32px;
+}
+
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #222;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #666;
+  background-color: #ddd;
+}
+
+.navbtn {
+  cursor:pointer;
+}
+
+.closebtn {
+  position: absolute;
+  top: 5;
+  right: 10px;
+  font-size: 25px;
+}
+
+.openbtn {
+  font-size: 20px;
+}
+
+#leftpanel{
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  border-right: 1px solid #aaa;
+  box-shadow: 2px 5px 8px #888888;
+  padding-left:10px;
+}
+
+.box{ 
+	padding:10px 10px 10px 10px ;
+	margin:15px 15px 15px 0px ;
+	background-color:#eee;
+}
+
+.inp{ 
+	width:95%;
+	margin-bottom:5px 
+}
+
+.inpdata{ 
+	width:95%;
+	margin-top: 0px ;
+	margin-bottom:5px ;
+}
+.inplbl{ 
+	width:80%;
+	font-size: 12px;
+	margin-bottom: 0px ;
+    bottom: -3px;
+	color:#888;
+    position: relative;
+}
+input[type="button"] {
+	border: 1px solid #aaa;
+	cursor:pointer;
+}
+input[type="button"]:hover {
+    background-color: #ddd;
+}
